@@ -3,7 +3,6 @@ package org.adligo.i.jse_adig;
 import java.io.File;
 
 import org.adligo.i.adig.client.GRegistry;
-import org.adligo.i.adig.client.I_GCheckedInvoker;
 import org.adligo.i.adig.client.I_GInvoker;
 import org.adligo.tests.ATest;
 

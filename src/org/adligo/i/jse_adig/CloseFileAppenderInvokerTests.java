@@ -3,8 +3,6 @@ package org.adligo.i.jse_adig;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.adligo.i.adig.client.GRegistry;
 import org.adligo.i.adig.client.I_GCheckedInvoker;

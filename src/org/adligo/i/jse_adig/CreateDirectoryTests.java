@@ -5,12 +5,10 @@ import java.io.File;
 import org.adligo.i.adi.client.InvocationException;
 import org.adligo.i.adig.client.GRegistry;
 import org.adligo.i.adig.client.I_GCheckedInvoker;
-import org.adligo.i.log.client.Log;
-import org.adligo.i.log.client.LogFactory;
 import org.adligo.tests.ATest;
 
 public class CreateDirectoryTests extends ATest {
-	private static final Log log = LogFactory.getLog(CreateDirectoryTests.class);
+	//private static final Log log = LogFactory.getLog(CreateDirectoryTests.class);
 	
 	public void setUp() {
 		DirectorySetup.setUp();

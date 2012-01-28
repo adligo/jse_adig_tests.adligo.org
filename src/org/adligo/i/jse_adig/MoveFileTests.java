@@ -78,7 +78,6 @@ public class MoveFileTests extends ATest {
 		assertTrue(file.mkdirs());
 		
 		String childA = newDir + File.separator + "a";
-		File fileA  = new File(childA);
 		
 		String childB = newDir + File.separator + "b.txt";
 		File fileB  = new File(childB);
