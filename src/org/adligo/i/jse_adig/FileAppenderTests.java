@@ -18,7 +18,7 @@ public class FileAppenderTests extends ATest {
 	public void testConstructorNullWriter() {
 		Exception caught = null;
 		try {
-			new FileAppender(null, null);
+			new FileAppender(null, null, null);
 		} catch (Exception x) {
 			caught = x;
 		}
@@ -38,7 +38,7 @@ public class FileAppenderTests extends ATest {
 		
 		Exception caught = null;
 		try {
-			new FileAppender(writer, null);
+			new FileAppender(writer, null, null);
 		} catch (Exception x) {
 			caught = x;
 		}
@@ -47,7 +47,47 @@ public class FileAppenderTests extends ATest {
 		assertEquals(FileAppender.FILE_APPENDER_DOES_NOT_ACCEPT_A_NULL_LINE_FEED, 
 				caught.getMessage());
 	}
+
+	public void testConstructorNullFileName() throws Exception {
+		
+		String testDir = DirectorySetup.getTestDirPath();
+		File file = new File(testDir + File.separator + "foo.txt");
+		file.createNewFile();
+		assertTrue(file.exists());
+		FileWriter writer = new FileWriter(file);
+		
+		Exception caught = null;
+		try {
+			new FileAppender(writer, FileAppenderParams.UNIX_LINE_FEED, null);
+		} catch (Exception x) {
+			caught = x;
+		}
+		assertNotNull(caught);
+		assertTrue(caught instanceof NullPointerException);
+		assertEquals(FileAppender.FILE_APPENDER_DOES_NOT_ACCEPT_A_EMPTY_FILE_NAME, 
+				caught.getMessage());
+	}
 	
+	public void testConstructorEmptyFileName() throws Exception {
+		
+		String testDir = DirectorySetup.getTestDirPath();
+		File file = new File(testDir + File.separator + "foo.txt");
+		file.createNewFile();
+		assertTrue(file.exists());
+		FileWriter writer = new FileWriter(file);
+		
+		Exception caught = null;
+		try {
+			new FileAppender(writer, FileAppenderParams.UNIX_LINE_FEED, " ");
+		} catch (Exception x) {
+			caught = x;
+		}
+		assertNotNull(caught);
+		assertTrue(caught instanceof NullPointerException);
+		assertEquals(FileAppender.FILE_APPENDER_DOES_NOT_ACCEPT_A_EMPTY_FILE_NAME, 
+				caught.getMessage());
+	}
+
 	public void testConstructor() throws Exception {
 		
 		String testDir = DirectorySetup.getTestDirPath();
@@ -56,7 +96,8 @@ public class FileAppenderTests extends ATest {
 		assertTrue(file.exists());
 		FileWriter writer = new FileWriter(file);
 		
-		new FileAppender(writer, "\n");
+		String fileName = file.getAbsolutePath();
+		new FileAppender(writer, "\n", fileName);
 		
 	}
 }

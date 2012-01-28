@@ -76,6 +76,6 @@ public class FileAppenderTokenTests extends ATest {
 		assertTrue(file.exists());
 		FileWriter writer = new FileWriter(file);
 		
-		return new FileAppender(writer, "\n");
+		return new FileAppender(writer, "\n", file.getAbsolutePath());
 	}
 }

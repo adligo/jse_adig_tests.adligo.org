@@ -75,7 +75,7 @@ public class FileAppenderFactoryTests extends ATest {
 		params.setFileName(nowhere.getAbsolutePath());
 		FileAppender appender = invoker.invoke(params);
 		assertNotNull(appender);
-		assertNotNull(appender.getWriter());
+		assertTrue(appender.isOpen());
 		assertEquals(FileAppenderParams.UNIX_LINE_FEED, appender.getLineFeed());
 	}
 }
