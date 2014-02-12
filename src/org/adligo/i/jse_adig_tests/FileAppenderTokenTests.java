@@ -1,10 +1,13 @@
-package org.adligo.i.jse_adig;
+package org.adligo.i.jse_adig_tests;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.adligo.i.jse_adig.FileAppender;
+import org.adligo.i.jse_adig.FileAppenderToken;
+import org.adligo.i.jse_adig.JseRegistry;
 import org.adligo.tests.ATest;
 
 public class FileAppenderTokenTests extends ATest {
@@ -76,6 +79,6 @@ public class FileAppenderTokenTests extends ATest {
 		assertTrue(file.exists());
 		FileWriter writer = new FileWriter(file);
 		
-		return new FileAppender(writer, "\n", file.getAbsolutePath());
+		return new MockFileAppender(writer, "\n", file.getAbsolutePath());
 	}
 }

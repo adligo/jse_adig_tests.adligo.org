@@ -1,12 +1,17 @@
-package org.adligo.i.jse_adig;
+package org.adligo.i.jse_adig_tests;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-import org.adligo.i.adig.client.GRegistry;
-import org.adligo.i.adig.client.I_GCheckedInvoker;
-import org.adligo.i.adig.client.I_GInvoker;
+import org.adligo.i.adig.shared.GRegistry;
+import org.adligo.i.adig.shared.I_GCheckedInvoker;
+import org.adligo.i.adig.shared.I_GInvoker;
+import org.adligo.i.jse_adig.FileAppender;
+import org.adligo.i.jse_adig.FileAppenderParams;
+import org.adligo.i.jse_adig.FileAppenderToken;
+import org.adligo.i.jse_adig.JseInvokerNames;
+import org.adligo.i.jse_adig.JseRegistry;
 import org.adligo.tests.ATest;
 
 public class CloseFileAppenderInvokerTests extends ATest {

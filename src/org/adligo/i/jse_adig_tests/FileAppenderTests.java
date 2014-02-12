@@ -1,8 +1,11 @@
-package org.adligo.i.jse_adig;
+package org.adligo.i.jse_adig_tests;
 
 import java.io.File;
 import java.io.FileWriter;
 
+import org.adligo.i.jse_adig.FileAppender;
+import org.adligo.i.jse_adig.FileAppenderParams;
+import org.adligo.i.jse_adig.JseRegistry;
 import org.adligo.tests.ATest;
 
 public class FileAppenderTests extends ATest {
@@ -18,7 +21,7 @@ public class FileAppenderTests extends ATest {
 	public void testConstructorNullWriter() {
 		Exception caught = null;
 		try {
-			new FileAppender(null, null, null);
+			new MockFileAppender(null, null, null);
 		} catch (Exception x) {
 			caught = x;
 		}
@@ -38,7 +41,7 @@ public class FileAppenderTests extends ATest {
 		
 		Exception caught = null;
 		try {
-			new FileAppender(writer, null, null);
+			new MockFileAppender(writer, null, null);
 		} catch (Exception x) {
 			caught = x;
 		}
@@ -58,7 +61,7 @@ public class FileAppenderTests extends ATest {
 		
 		Exception caught = null;
 		try {
-			new FileAppender(writer, FileAppenderParams.UNIX_LINE_FEED, null);
+			new MockFileAppender(writer, FileAppenderParams.UNIX_LINE_FEED, null);
 		} catch (Exception x) {
 			caught = x;
 		}
@@ -78,7 +81,7 @@ public class FileAppenderTests extends ATest {
 		
 		Exception caught = null;
 		try {
-			new FileAppender(writer, FileAppenderParams.UNIX_LINE_FEED, " ");
+			new MockFileAppender(writer, FileAppenderParams.UNIX_LINE_FEED, " ");
 		} catch (Exception x) {
 			caught = x;
 		}
@@ -97,7 +100,7 @@ public class FileAppenderTests extends ATest {
 		FileWriter writer = new FileWriter(file);
 		
 		String fileName = file.getAbsolutePath();
-		new FileAppender(writer, "\n", fileName);
+		new MockFileAppender(writer, "\n", fileName);
 		
 	}
 }

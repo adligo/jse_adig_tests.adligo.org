@@ -1,9 +1,9 @@
-package org.adligo.i.jse_adig;
+package org.adligo.i.jse_adig_tests;
 
 import java.io.File;
 
-import org.adligo.i.log.client.Log;
-import org.adligo.i.log.client.LogFactory;
+import org.adligo.i.log.shared.Log;
+import org.adligo.i.log.shared.LogFactory;
 
 public class DirectorySetup {
 	private static final Log log = LogFactory.getLog(DirectorySetup.class);

@@ -1,9 +1,11 @@
-package org.adligo.i.jse_adig;
+package org.adligo.i.jse_adig_tests;
 
 import java.io.File;
 
-import org.adligo.i.adig.client.GRegistry;
-import org.adligo.i.adig.client.I_GInvoker;
+import org.adligo.i.adig.shared.GRegistry;
+import org.adligo.i.adig.shared.I_GInvoker;
+import org.adligo.i.jse_adig.JseInvokerNames;
+import org.adligo.i.jse_adig.JseRegistry;
 import org.adligo.tests.ATest;
 
 public class FileExistsTests extends ATest {
