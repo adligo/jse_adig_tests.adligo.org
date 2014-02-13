@@ -21,7 +21,7 @@ public class FileAppenderTests extends ATest {
 	public void testConstructorNullWriter() {
 		Exception caught = null;
 		try {
-			new MockFileAppender(null, null, null);
+			new DelegateFileAppender(null, null, null);
 		} catch (Exception x) {
 			caught = x;
 		}
@@ -41,7 +41,7 @@ public class FileAppenderTests extends ATest {
 		
 		Exception caught = null;
 		try {
-			new MockFileAppender(writer, null, null);
+			new DelegateFileAppender(writer, null, null);
 		} catch (Exception x) {
 			caught = x;
 		}
@@ -61,7 +61,7 @@ public class FileAppenderTests extends ATest {
 		
 		Exception caught = null;
 		try {
-			new MockFileAppender(writer, FileAppenderParams.UNIX_LINE_FEED, null);
+			new DelegateFileAppender(writer, FileAppenderParams.UNIX_LINE_FEED, null);
 		} catch (Exception x) {
 			caught = x;
 		}
@@ -81,7 +81,7 @@ public class FileAppenderTests extends ATest {
 		
 		Exception caught = null;
 		try {
-			new MockFileAppender(writer, FileAppenderParams.UNIX_LINE_FEED, " ");
+			new DelegateFileAppender(writer, FileAppenderParams.UNIX_LINE_FEED, " ");
 		} catch (Exception x) {
 			caught = x;
 		}
@@ -100,7 +100,7 @@ public class FileAppenderTests extends ATest {
 		FileWriter writer = new FileWriter(file);
 		
 		String fileName = file.getAbsolutePath();
-		new MockFileAppender(writer, "\n", fileName);
+		new DelegateFileAppender(writer, "\n", fileName);
 		
 	}
 }
