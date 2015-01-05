@@ -1,8 +1,8 @@
-bin/
+/bin/
 /build/
-classes/
-classes_e/
-test_reports/
+/classes/
+/classes_e/
+/test_reports/
 jse_adig_tests*.jar
 test_failure.properties
 
